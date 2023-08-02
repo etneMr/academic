@@ -1,0 +1,112 @@
+#academic-side-nav {
+    background: #4D44B5;
+    padding-top: 30px;
+    padding-left: 27px;
+    width: 300px;
+    padding-bottom: 30px;
+}
+
+#academic-side-nav .footer {
+    margin-top: 80px;
+    color: var(--color-white, #FFF);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+#academic-side-nav ul {
+    list-style-type: none;
+}
+
+#academic-side-nav .menu-item {
+    width: 100%;
+    margin: 0px;
+    padding: 16px 24px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+    color: var(--color-gray-2, #C1BBEB);
+}
+
+
+#academic-side-nav .menu-item:hover {
+    border-radius: 40px 0px 0px 40px;
+    background: var(--color-background, #F3F4FF);
+
+    /* Shadow */
+    box-shadow: 0px 20px 50px 0px rgba(191, 21, 108, 0.05);
+
+    color: var(--color-purple, #4D44B5);
+
+    /* Text/Text Medium 1 */
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.menu-item .menu-title:hover {
+    color: var(--color-purple, #4D44B5);
+    fill: var(--color-gray-2, #C1BBEB);
+
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.menu-item .menu-title {
+    color: inherit;
+
+    /* Text/Text Medium 1 */
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.menu-item .menu-icon {
+    fill: inherit
+}
+
+#academic-side-nav .a-logo {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+
+    margin-bottom: 46px;
+}
+
+.a-logo .a-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: var(--color-orange, #FB7D5B);
+
+    color: var(--color-white, #FFF);
+    font-family: Poppins;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+}
+
+.a-logo .title-text {
+    color: var(--color-white, #FFF);
+    font-family: Poppins;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}

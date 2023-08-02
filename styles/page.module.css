@@ -1,0 +1,11 @@
+.main {
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: flex-start; */
+  flex-grow: 1;
+  /* align-items: center; */
+  padding: 0;
+  margin: 50px;
+  background: var(--color-background, #F3F4FF);
+  align-self: flex-start;
+}
