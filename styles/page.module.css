@@ -1,11 +1,12 @@
 .main {
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* justify-content: flex-start; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   flex-grow: 1;
-  /* align-items: center; */
+  align-items: center;
   padding: 0;
-  margin: 50px;
   background: var(--color-background, #F3F4FF);
   align-self: flex-start;
+  margin-left: 50px;
+  gap: 50px;
 }

@@ -1,6 +1,9 @@
 #dashboard {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    margin-top: 50px;
+    gap: 40px;
 }
 
 #dashboard .dashboard-header {
@@ -111,6 +114,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.side-status {
+    background: var(--color-white, #FFF);
+    padding: 50px 25px;
+    align-self: flex-start;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
 }
 
 #dashboard .unpaid-student {
@@ -283,4 +295,159 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+#dashboard .recent-students {
+    /* display: flex; */
+    /* flex-flow: column; */
+    /* justify-content: flex-start; */
+    /* gap: 30px; */
+}
+
+.recent-students .recent-students-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 35px;
+
+}
+
+.recent-students-header .dashboard-aritcle {
+    display: flex;
+    flex-flow: column;
+    gap: 4px;
+    margin-bottom: 20px;
+}
+
+.dashboard-aritcle .dashboard-article-title {
+    color: var(--color-text, #303972);
+
+    /* Heading/Heading 3 */
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.dashboard-aritcle .dashboard-article-subs {
+    color: var(--color-gray-3, #A098AE);
+
+    /* Text/Text Regular 2 */
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.dashboard-article-subs .total {
+    color: var(--color-gray-3, #A098AE);
+
+    /* Text/Text Semi Bold 2 */
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.recent-students-header .add-message-student {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: var(--color-purple, #4D44B5);
+
+    /* Shadow */
+    box-shadow: 0px 20px 50px 0px rgba(191, 21, 108, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-message-student .plus-text {
+    color: var(--color-white, #FFF);
+    font-family: Cairo;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    /* 85.714% */
+}
+
+.recent-students .recent-student-item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+
+    margin: 15px auto;
+}
+
+.recent-student-item .recent-student-avatar {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}
+
+.recent-student-item .recent-student-info {
+    display: flex;
+    flex-flow: column;
+    gap: 4px;
+    flex-grow: 1;
+}
+
+.recent-student-info .name {
+    color: var(--color-text, #303972);
+
+    /* Text/Text Semi Bold 2 */
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.recent-student-info .class {
+    color: var(--color-gray-3, #A098AE);
+
+    /* Text/Text Regular 2 */
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.recent-student-item .open-message-btn {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    border: 2px solid var(--color-gray-3, #A098AE);
+    background: var(--color-white, #FFF);
+}
+
+.recent-students .recent-students-viewmore {
+    border-radius: 40px;
+    background: var(--linear-transparent-purple-10, rgba(77, 68, 181, 0.10));
+    padding: 17px 0px;
+    margin: 35px 0px 0px;
+    width: 100%;
+
+
+    color: var(--color-purple, #4D44B5);
+
+    /* Text/Text Semi Bold 1 */
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    border:none;
 }
