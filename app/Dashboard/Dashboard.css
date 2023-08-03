@@ -4,6 +4,7 @@
     flex-grow: 1;
     margin-top: 50px;
     gap: 40px;
+    align-self: flex-start;
 }
 
 #dashboard .dashboard-header {
@@ -25,41 +26,6 @@
     font-weight: 700;
     line-height: normal;
 }
-
-.dashboard-header .search-bar {
-    display: flex;
-    flex-flow: row nowrap;
-    width: 350px;
-    height: 60px;
-    gap: 16px;
-    padding: 23px 32px;
-    align-items: center;
-    flex-shrink: 0;
-    border-radius: 40px;
-    background: var(--color-white, #FFF);
-}
-
-.search-bar .search-input {
-    color: var(--color-gray-3, #A098AE);
-
-    /* Text/Text Regular 1 */
-    font-family: Poppins;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-
-    border: none;
-    text-decoration: none;
-
-    background-color: #FFF;
-}
-
-.search-bar .search-input:focus {
-    outline: none;
-}
-
-
 
 #dashboard .overview {
     display: flex;
@@ -236,67 +202,6 @@
     line-height: normal;
 }
 
-.unpaid-student .unpaid-student-footer {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.unpaid-student-footer .display-total-students {
-    color: var(--color-gray-3, #A098AE);
-
-    /* Text/Text Regular 2 */
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.display-total-students .number {
-    color: #363B64;
-
-    /* Text/Text Regular 2 */
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.page-navigation {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 16px;
-}
-
-.page-navigation .page-navigate-item {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-
-    width: 50px;
-    height: 50px;
-
-    border-radius: 40px;
-    border: 2px solid var(--color-gray-3, #A098AE);
-}
-
-.page-navigate-item .page-navigate-number {
-    color: var(--color-gray-3, #A098AE);
-
-    /* Text/Text Regular 1 */
-    font-family: Poppins;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
 #dashboard .recent-students {
     /* display: flex; */
     /* flex-flow: column; */
@@ -432,11 +337,12 @@
     background: var(--color-white, #FFF);
 }
 
-.recent-students .recent-students-viewmore {
+.recent-students-viewmore {
     border-radius: 40px;
     background: var(--linear-transparent-purple-10, rgba(77, 68, 181, 0.10));
     padding: 17px 0px;
     margin: 35px 0px 0px;
+    margin-bottom: 65px;
     width: 100%;
 
 
@@ -449,5 +355,95 @@
     font-weight: 600;
     line-height: normal;
 
-    border:none;
+    border: none;
+}
+
+.recent-students .recent-messages-item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    gap: 16px;
+
+    padding-bottom: 25px;
+    margin-top: 22px;
+    border-bottom: 1px solid #A098AE;
+}
+
+.recent-messages-item .recent-student-info {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    gap: 4px;
+    flex-grow: 1;
+}
+
+.recent-student-info .message {
+    
+    color: var(--color-gray-3, #A098AE);
+
+    /* Text/Text Regular 2 */
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px;
+}
+
+.recent-student-info .time-sending {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--color-gray-3, #A098AE);
+
+    /* Text/Text Regular 2 */
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.recent-students .post-item {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 4px;
+    margin: 16px auto;
+}
+
+.post-item .post-thumbnail {
+    border-radius: 18px;
+    background: var(--color-gray-2, #C1BBEB);
+    height: 160px;
+    object-fit: contain;
+    margin-bottom: 24px;
+}
+
+.post-item .title {
+    color: var(--color-main, #363B64);
+
+    /* Text/Text Semi Bold 1 */
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.post .des {
+    color: var(--color-gray-1, #A098AE);
+
+    /* Text/Text Regular 2 */
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px;
 }

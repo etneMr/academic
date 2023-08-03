@@ -1,6 +1,8 @@
 import React from 'react'
 import './Dashboard.css'
 import StatusBar from '@/components/StatusBar/StatusBar'
+import { PageNavigation } from '@/components/common/PageNavigation/PageNavigation'
+import SearchBar from '@/components/common/SearchBar/SearchBar'
 
 const data = [
     {
@@ -98,6 +100,47 @@ const listStudents = [
     }
 ]
 
+const listMessages = [
+    {
+        sendFrom: "Samantha William",
+        message: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores expedita est harum laborum nemo, vel debitis suscipit aperiam quibusdam mollitia at itaque cumque quaerat id rerum molestias. Et, praesentium fuga.",
+        time: "12:45 PM"
+    },
+    {
+        sendFrom: "Tony Soap",
+        message: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores expedita est harum laborum nemo, vel debitis suscipit aperiam quibusdam mollitia at itaque cumque quaerat id rerum molestias. Et, praesentium fuga.",
+        time: "12:45 PM"
+    },
+    {
+        sendFrom: "Jordan Nico",
+        message: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores expedita est harum laborum nemo, vel debitis suscipit aperiam quibusdam mollitia at itaque cumque quaerat id rerum molestias. Et, praesentium fuga.",
+        time: "12:45 PM"
+    },
+    {
+        sendFrom: "Nadila Adja",
+        message: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores expedita est harum laborum nemo, vel debitis suscipit aperiam quibusdam mollitia at itaque cumque quaerat id rerum molestias. Et, praesentium fuga.",
+        time: "12:45 PM"
+    }
+]
+
+const listPosts = [
+    {
+        thumbnail: "",
+        title: "Beef Steak with Fried Potato",
+        des: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    },
+    {
+        thumbnail: "",
+        title: "Japanese Beef Ramen",
+        des: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    },
+    {
+        thumbnail: "",
+        title: "Pancake with Honey",
+        des: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    }
+]
+
 const Dashboard = () => {
     return (
         <>
@@ -106,12 +149,7 @@ const Dashboard = () => {
                     <div className="header-text">
                         Dashboard
                     </div>
-                    <div className="search-bar">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                            <path d="M27.6 25.8L22 20.2C23.3 18.5 24.1 16.4 24.1 14.1C24.1 8.60001 19.6 4.10001 14.1 4.10001C8.6 4.10001 4 8.60001 4 14.1C4 19.6 8.5 24.1 14 24.1C16.3 24.1 18.5 23.3 20.2 21.9L25.8 27.5C26 27.7 26.4 27.9 26.7 27.9C27 27.9 27.3 27.8 27.6 27.5C28.1 27.1 28.1 26.3 27.6 25.8ZM6.5 14.1C6.5 10 9.9 6.60001 14 6.60001C18.1 6.60001 21.5 10 21.5 14.1C21.5 18.2 18.1 21.6 14 21.6C9.9 21.6 6.5 18.3 6.5 14.1Z" fill="#4D44B5" />
-                        </svg>
-                        <input type="text" className='search-input' placeholder='Search here...' />
-                    </div>
+                    <SearchBar />
                 </div>
                 <div className="overview">
                     {data.map((item) => <OverviewItem data={item} key={item.title} />)}
@@ -204,55 +242,8 @@ function UnpaidStudent({ listStudents }) {
                     {rows}
                 </tbody>
             </table>
-            <div className="unpaid-student-footer">
-                <div className="display-total-students">
-                    Showing <span className="number">1-5</span> from <span className="number">100</span> data
-                </div>
-                <PageNavigation length={5} selected={0} />
-            </div>
-        </div>)
-}
-
-function PageNavigation({ selected, length }) {
-    const rows = [];
-    rows.push(
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
-            <path d="M20.512 26.676L10.048 17.236C9.60003 16.852 9.60003 16.148 10.048 15.764L20.512 6.32403C21.184 5.71603 22.272 6.16403 22.272 7.06003L22.272 25.94C22.272 26.836 21.184 27.284 20.512 26.676Z" fill="#A098AE" />
-        </svg>
-    )
-    const pos = 0;
-    for (let i = pos; i < pos + 3; i++) {
-        if (i >= length) break;
-        if (i === selected) {
-            rows.push(
-                <div className="page-navigate-item" style={{ background: "#4D44B5", borderColor: "#4D44B5" }} key={i + 1}>
-                    <div className="page-navigate-number" style={{ color: "#fff" }} >
-                        {i + 1}
-                    </div>
-                </div>
-            )
-        } else {
-            rows.push(
-                <div className="page-navigate-item" key={i + 1}>
-                    <div className="page-navigate-number" >
-                        {i + 1}
-                    </div>
-                </div>
-            )
-        }
-
-    }
-
-    if (selected !== length - 1)
-        rows.push(<svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
-            <path d="M11.488 6.32397L21.952 15.764C22.4 16.148 22.4 16.852 21.952 17.236L11.488 26.676C10.816 27.284 9.72803 26.836 9.72803 25.94L9.72803 7.05997C9.72803 6.16397 10.816 5.71597 11.488 6.32397Z" fill="#A098AE" />
-        </svg>)
-
-    return (<>
-        <div className="page-navigation">
-            {rows}
-        </div>
-    </>);
+            <PageNavigation length={5} selected={0} />
+        </div >)
 }
 
 function SideStatus() {
@@ -260,6 +251,8 @@ function SideStatus() {
         <div className="side-status">
             <StatusBar />
             <RecentStudents listStudents={listStudents} />
+            <Messages listMessages={listMessages} />
+            <Posts listPosts={listPosts} />
         </div>
     );
 }
@@ -304,6 +297,79 @@ function RecentStudents({ listStudents }) {
                         +
                     </div>
                 </button>
+            </div>
+            {rows}
+            <button className="recent-students-viewmore">
+                View More
+            </button>
+        </div>
+    )
+}
+
+function Messages({ listMessages }) {
+    const rows = [];
+
+    listMessages.map((message) =>
+        rows.push(
+            <div className="recent-messages-item">
+                <div className="recent-student-avatar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <rect y="0.00012207" width="48" height="48" rx="24" fill="#C1BBEB" />
+                    </svg>
+                </div>
+                <div className="recent-student-info">
+                    <div className="name">
+                        {message.sendFrom}
+                    </div>
+                    <div className="message">
+                        {message.message}
+                    </div>
+                </div>
+                <div className="time-sending">
+                    {message.time}
+                </div>
+            </div>
+        )
+    )
+    return (
+        <div className="recent-students">
+            <div className="dashboard-aritcle">
+                <div className="dashboard-article-title">
+                    Messages
+                </div>
+            </div>
+            {rows}
+            <button className="recent-students-viewmore">
+                View More
+            </button>
+        </div>
+    )
+}
+
+function Posts({ listPosts }) {
+    const rows = [];
+
+    listPosts.map((post) =>
+        rows.push(
+            <div className="post-item">
+                <div className="post-thumbnail">
+
+                </div>
+                <div className="title">
+                    {post.title}
+                </div>
+                <div className="des">
+                    {post.des}
+                </div>
+            </div>
+        )
+    )
+    return (
+        <div className="recent-students">
+            <div className="dashboard-aritcle">
+                <div className="dashboard-article-title">
+                    Current Foods Menu
+                </div>
             </div>
             {rows}
             <button className="recent-students-viewmore">

@@ -76,7 +76,7 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   /* gap: 50px; */
-  align-items: center;
+  align-items: flex-start;
   color: var(--color-text, #303972);
   background: var(--color-background, #F3F4FF);
 }
