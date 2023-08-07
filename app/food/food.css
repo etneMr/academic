@@ -1,0 +1,264 @@
+#food {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-right: 50px;
+    gap: 40px;
+    align-self: flex-start;
+}
+
+#food .food-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    /* align-self: space-between; */
+    align-items: center;
+    width: 100%;
+}
+
+.food-header .header-text {
+    color: var(--color-text, #303972);
+
+    /* Heading/Heading 1 */
+    font-family: Poppins;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+#food .food-table {
+    border-radius: 20px;
+    background: var(--color-white, #FFF);
+    padding: 30px;
+}
+
+.food-table table {
+    border-collapse: separate;
+    border-spacing: 0px 32px;
+}
+
+.food-table .food-item {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.food-table tr{
+    width: 100%;
+}
+
+
+.food-item .food-image {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+
+    border-radius: 18px;
+    background: var(--color-gray-2, #C1BBEB);
+}
+
+.food-table .food-table-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.food-table-header .food-header-text {
+    color: var(--color-text, #303972);
+
+    /* Heading/Heading 3 */
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.food-table-header .food-category {
+    border-bottom: 2px solid #C1BBEB;
+    display: flex;
+    padding: 0px 32px;
+    flex-flow: row;
+    /* justify-content: space-around; */
+}
+
+.food-category .food-category-item {
+    padding: 16px 24px;
+    border-bottom: 4px solid #4D44B5;
+}
+
+.food-category-item .food-category-text {
+    color: var(--color-purple, #4D44B5);
+
+    /* Text/Text Semi Bold 2 */
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.food-item .food-info {
+    position: relative;
+    padding-left: 40px;
+}
+
+.food-info .food-category {
+    position: absolute;
+    top: 0;
+    display: flex;
+    width: 120px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 40px;
+    background: var(--color-purple, #4D44B5);
+
+    color: var(--color-white, #FFF);
+
+    /* Text/Text Regular 2 */
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.food-info .food-name {
+    color: var(--color-text, #303972);
+
+    /* Heading/Heading 3 */
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+}
+
+.food-item .food-rating {
+    gap: 8px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+    padding: 0px 20px;
+}
+
+.food-rating .food-rating-text {
+    color: var(--color-text, #303972);
+
+    /* Heading/Heading 3 */
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.food-item .food-order-info {
+    gap: 8px;
+    padding: 0px 20px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+}
+
+.food-order-info .food-order-detail {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+}
+
+.food-order-detail .total-order {
+    color: var(--color-text, #303972);
+
+    /* Heading/Heading 3 */
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.food-order-detail .total-order-text {
+    color: var(--color-gray-3, #A098AE);
+
+    /* Text/Text Regular 1 */
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.food-item .food-trending {
+    gap: 8px;
+    padding: 0px 20px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+}
+
+.food-trending .food-trending-detail {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+}
+
+.food-trending .percentage {
+    color: var(--color-text, #303972);
+
+    /* Heading/Heading 3 */
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.food-trending .status {
+    color: var(--color-gray-3, #A098AE);
+
+    /* Text/Text Regular 1 */
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.food-item .food-percentage {
+    position: relative;
+    margin: 0px 20px;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.food-percentage .food-percentage-text {
+    position: absolute;
+    color: var(--color-text, #303972);
+
+    /* Text/Text Semi Bold 2 */
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
