@@ -100,6 +100,18 @@ p {
   padding-bottom: 20px;
 }
 
+h1 {
+  color: var(--color-text, #303972);
+
+  /* Heading/Heading 1 */
+  font-family: Poppins;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+
 h3 {
   color: var(--color-text, #303972);
 

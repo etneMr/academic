@@ -1,0 +1,190 @@
+#student-details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-right: 50px;
+    gap: 40px;
+    align-self: flex-start;
+}
+
+#student-details .student-details-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    /* align-self: space-between; */
+    align-items: center;
+    width: 100%;
+}
+
+
+#student-details .student-detail-container {
+    position: relative;
+    flex: 1;
+    align-self: flex-start;
+
+    display: flex;
+    flex-flow: column wrap;
+    gap: 40px;
+}
+
+.student-detail-container .student-info {
+    position: relative;
+    border-radius: 20px;
+    background-color: #fff;
+    z-index: 6;
+}
+
+.student-detail-container .student-header-background {
+    position: relative;
+    border-radius: 20px 20px 0px 0px;
+    background: var(--color-purple, #4D44B5);
+    height: 140px;
+    width: 100%;
+    /* position: absolute; */
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    gap: 40px;
+}
+
+.student-detail-container .avatar {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+    top: 32px;
+    left: 32px;
+    z-index: 6;
+}
+
+.student-detail-container .first-square {
+    position: absolute;
+    z-index: 4;
+    top: 32px;
+    right: 40px;
+    width: 263.592px;
+    height: 275.13px;
+    flex-shrink: 0;
+    border-radius: 400px;
+    border: 16px solid var(--color-yellow, #FCC43E);
+}
+
+.student-detail-container .second-square {
+    z-index: 4;
+    width: 263.592px;
+    position: absolute;
+    top: 80px;
+    right: 200px;
+    height: 275.13px;
+    flex-shrink: 0;
+    border-radius: 400px;
+    border: 16px solid var(--color-orange, #FB7D5B);
+}
+
+.student-detail-container .content {
+    z-index: 5;
+    position: relative;
+    padding: 116px 32px 32px 32px;
+
+}
+
+#student-details .about-student {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 50px;
+
+    /* justify-content: flex-start; */
+    /* align-items: flex-start; */
+}
+
+.student-detail-container .contact-item {
+    display: flex;
+    flex-flow: column !important;
+    justify-content: flex-start;
+    gap: 8px;
+    align-content: flex-start;
+    align-self: flex-start;
+}
+
+.contact-item .contact-label {
+    color: var(--color-gray-3, #A098AE);
+
+    /* Text/Text Regular 1 */
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    align-self: flex-start;
+}
+
+.contact-item .contact-content {
+    display: flex;
+    flex-flow: row;
+    gap: 16px;
+    align-items: center;
+}
+
+.about-student .schedule-details {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 24px;
+}
+
+.student-detail-container .payments {
+    border-radius: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    padding: 32px;
+}
+
+.payments .trending-icon {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: var(--color-red, #FF4550);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payments .payment-id {
+    color: var(--color-text, #303972);
+
+    /* Text/Text Semi Bold 1 */
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.payments .price {
+    color: var(--color-text, #303972);
+
+    /* Text/Text Semi Bold 1 */
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.payments .status {
+    color: var(--color-green, #4CBC9A);
+
+    /* Text/Text Semi Bold 1 */
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}

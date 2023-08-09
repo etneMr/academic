@@ -3,7 +3,9 @@ import './user.css'
 
 const User = () => {
     return (
-        <div>User</div>
+        <button>
+            CLike me
+        </button>
     )
 }
 
