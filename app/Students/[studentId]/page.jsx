@@ -1,6 +1,9 @@
+"use client"
 import './student-details.css'
 import StatusBar from '@/components/StatusBar/StatusBar'
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { doGetOneStudent } from '@/redux/asyncActions/students'
 import { ScheduleComponent } from '@/app/teachers/[teacherId]/page'
 import { PageNavigation } from '@/components/common/PageNavigation/PageNavigation'
 
@@ -39,44 +42,53 @@ const listTasks = [
 const listPayments = [];
 
 const StudentDetails = () => {
+
+    const dispatch = useDispatch()
+    const { oneStudent, error } = useSelector((state) => state.student)
+
+    React.useEffect(() => {
+        dispatch(doGetOneStudent(1))
+    }, [dispatch])
+
+    if (error) return `Error: ${error.message}`;
+
+    if (!oneStudent) return `Student: ${student}`;
     return (
         <div id="student-details">
             <div className="student-details-header">
                 <h1>
-                    student Details
+                    Student Details
                 </h1>
                 <StatusBar />
             </div>
             <div className="about-student">
-                <StudentDetailsComponent />
+                <StudentDetailsComponent student={oneStudent} />
                 <ScheduleComponent listTasks={listTasks} />
             </div>
         </div>)
 }
 
-function StudentDetailsComponent() {
+function StudentDetailsComponent({ student }) {
     return (
         <div className="student-detail-container">
-            <StudentInfoComponent />
+            <StudentInfoComponent student={student} />
             <PaymentHistory listPayments={listPayments} />
         </div>
 
     )
 }
 
-function StudentInfoComponent() {
+function StudentInfoComponent({ student }) {
     return (
         <div className="student-info">
-            <div className="student-header-background">
-
-            </div>
+            <div className="student-header-background"></div>
             <div className="avatar">
                 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
                     <rect x="4" y="4" width="192" height="192" rx="96" fill="#C1BBEB" stroke="white" strokeWidth="8" />
                 </svg>
             </div>
-            <div className="second-square"></div>
-            <div className="first-square"></div>
+            {/* <div className="second-square"></div> */}
+            {/* <div className="first-square"></div> */}
             <div className="content">
                 <div className="action">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -84,10 +96,10 @@ function StudentInfoComponent() {
                     </svg>
                 </div>
                 <div className="name">
-                    Maria Historia
+                    {student.title}
                 </div>
                 <div className="subject">
-                    History student
+                    {student.category}
                 </div>
                 <div className="contact">
                     <div className="contact-item">
@@ -101,7 +113,7 @@ function StudentInfoComponent() {
                                 </svg>
                             </div>
                             <div className="contact-item-text">
-                                Justin Hope
+                                {student.brand}
                             </div>
                         </div>
                     </div>

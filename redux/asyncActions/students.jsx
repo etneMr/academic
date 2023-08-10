@@ -6,7 +6,7 @@ export const doGetAllStudents = createAsyncThunk('students/getAll', async (param
     return response.data;
 })
 
-export const doGetOneStudent = createAsyncThunk('students/getOne', async ({ studentId }) => {
-    const response = await apiProduct.getOneProduct({ studentId });
+export const doGetOneStudent = createAsyncThunk('students/getOne', async (studentId) => {
+    const response = await apiProduct.getOneProduct(studentId);
     return response.data
 })

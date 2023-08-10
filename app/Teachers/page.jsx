@@ -1,74 +1,43 @@
+"use client"
+
 import React from 'react'
 import './teachers.css'
 import StatusBar from '@/components/StatusBar/StatusBar'
 import SearchBar from '@/components/common/SearchBar/SearchBar'
 import { PageNavigation } from '@/components/common/PageNavigation/PageNavigation'
 import Link from 'next/link'
-
-const listTeachers = [
-  {
-    name: "Teacher",
-    subject: "Math",
-    id: "asd1"
-  },
-  {
-    name: "Teacher",
-    subject: "Math",
-    id: "asd2"
-  },
-  {
-    name: "Teacher",
-    subject: "Math",
-    id: "asd3"
-  },
-  {
-    name: "Teacher",
-    subject: "Math",
-    id: "asd4"
-  },
-  {
-    name: "Teacher",
-    subject: "Math",
-    id: "asd5"
-  },
-  {
-    name: "Teacher",
-    subject: "Math",
-    id: "asd6"
-  },
-  {
-    name: "Teacher",
-    subject: "Math",
-    id: "asd7"
-  },
-  {
-    name: "Teacher",
-    subject: "Math",
-    id: "asd8"
-  },
-  {
-    name: "Teacher",
-    subject: "Math",
-    id: "asd9"
-  },
-  {
-    name: "Teacher",
-    subject: "Math",
-    id: "asd12"
-  },
-  {
-    name: "Teacher",
-    subject: "Math",
-    id: "asd13"
-  },
-  {
-    name: "Teacher",
-    subject: "Math",
-    id: "asd14"
-  },
-]
+import { useDispatch, useSelector } from 'react-redux'
+import { doGetAllTeachers } from '@/redux/asyncActions/teachers'
 
 const Teachers = () => {
+
+  const { limit, list, total, skip, isLoading, error } = useSelector((state) => state.teachers);
+  const dispatch = useDispatch()
+
+  React.useEffect(() => {
+    const params = {
+      params: {
+        limit: limit,
+      }
+    }
+    dispatch(doGetAllTeachers(params));
+  }, [limit, dispatch]);
+
+  function onPageClick(page) {
+    if (page < 0) return;
+    if (page > total / limit) return;
+    const params = {
+      params: {
+        limit: limit,
+        skip: page * limit,
+      }
+    }
+    dispatch(doGetAllTeachers(params));
+  }
+
+  if (error) return `Error: ${error}`;
+  if (!list) return "No post!"
+
   return (
     <div id="teachers">
       <div className="teachers-header">
@@ -98,12 +67,12 @@ const Teachers = () => {
           </div>
         </button>
       </div>
-      <TeachersTable listTeachers={listTeachers} />
+      <TeachersTable listTeachers={list} limit={limit} skip={skip} total={total} onPageClick={onPageClick} />
     </div>
   )
 }
 
-function TeachersTable({ listTeachers }) {
+function TeachersTable({ listTeachers, limit, skip, total, onPageClick }) {
   const rows = []
   listTeachers.map((teacher) =>
     rows.push(
@@ -113,10 +82,10 @@ function TeachersTable({ listTeachers }) {
         </div>
         <div className="teacher-info">
           <div className="teacher-name">
-            {teacher.name}
+            {teacher.title}
           </div>
           <div className="teacher-subject">
-            {teacher.subject}
+            {teacher.category}
           </div>
         </div>
         <div className="teacher-contact">
@@ -146,7 +115,7 @@ function TeachersTable({ listTeachers }) {
       <div className="teachers-table">
         {rows}
       </div>
-      <PageNavigation length={5} selected={0} />
+      <PageNavigation length={Math.ceil(total / limit)} selected={(skip / limit)} limit={limit} skip={skip} total={total} onPageClick={onPageClick} />
     </>
 
   )
