@@ -1,4 +1,4 @@
-#add-teacher {
+#add-student {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -9,7 +9,7 @@
     align-self: flex-start;
 }
 
-#add-teacher .add-teacher-header {
+#add-student .add-student-header {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -17,3 +17,5 @@
     align-items: center;
     width: 100%;
 }
+
+#add-student .student-form {}

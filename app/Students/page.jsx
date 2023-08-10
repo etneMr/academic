@@ -63,14 +63,14 @@ const Students = () => {
             <path d="M26.6759 11.488L17.2359 21.952C16.8519 22.4 16.1479 22.4 15.7639 21.952L6.3239 11.488C5.7159 10.816 6.1639 9.72798 7.0599 9.72798L25.9399 9.72798C26.8359 9.72798 27.2839 10.816 26.6759 11.488Z" fill="#4D44B5" />
           </svg>
         </button>
-        <button className="add-btn">
+        <Link className="add-btn" href={`/students/add`}>
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
             <path d="M6.34703 10.6647H0.382324V6.42941H6.34703V0.5H10.5823V6.42941H16.6176V10.6647H10.5823V16.6647H6.34703V10.6647Z" fill="white" />
           </svg>
           <div className="btn-text">
             New Student
           </div>
-        </button>
+        </Link>
       </div>
       <StudentsTable listStudents={list} limit={limit} skip={skip} total={total} onPageClick={onPageClick} />
     </div>

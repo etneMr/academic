@@ -1,6 +1,7 @@
 import React from 'react'
 import './add.css'
 import StatusBar from '@/components/StatusBar/StatusBar'
+import FormContainer, {FormFooter} from '@/components/common/FormContainer/FormContainer'
 import { TextField, TextareaField, SelectImageField } from '@/components/common/TextField/TextField'
 
 const AddTeacher = () => {
@@ -43,29 +44,13 @@ function TeacherForm() {
       <form id="teacher-form">
         <FormContainer label="Personal Details" children={personalField} />
         <FormContainer label="Education" children={educationField} />
-        <div className="form-footer">
-          <button className="save">Save as Draft</button>
-          <button className="submit" type="submit" form="teacher-form" value="Submit">Submit</button>
-        </div>
+        <FormFooter />
       </form>
     </>
 
   )
 }
 
-function FormContainer({ label, children }) {
-  return (
-    <div className="form">
-      <div className="header">
-        <h3 style={{ padding: "0px" }}>
-          {label}
-        </h3>
-      </div>
-      <div className="content">
-        {children}
-      </div>
-    </div>
-  )
-}
+
 
 export default AddTeacher
