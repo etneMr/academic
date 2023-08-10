@@ -146,9 +146,9 @@ const Dashboard = () => {
         <>
             <div id="dashboard">
                 <div className="dashboard-header">
-                    <div className="header-text">
+                    <h1>
                         Dashboard
-                    </div>
+                    </h1>
                     <SearchBar />
                 </div>
                 <div className="overview">

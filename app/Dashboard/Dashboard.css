@@ -82,14 +82,6 @@
     justify-content: center;
 }
 
-.side-status {
-    background: var(--color-white, #FFF);
-    padding: 50px 25px;
-    align-self: flex-start;
-    display: flex;
-    flex-flow: column;
-    justify-content: flex-start;
-}
 
 #dashboard .unpaid-student {
     padding: 32px;
@@ -200,13 +192,6 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-}
-
-#dashboard .recent-students {
-    /* display: flex; */
-    /* flex-flow: column; */
-    /* justify-content: flex-start; */
-    /* gap: 30px; */
 }
 
 .recent-students .recent-students-header {

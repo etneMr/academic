@@ -2,7 +2,7 @@
     background-color: inherit;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     gap: 20px
 }

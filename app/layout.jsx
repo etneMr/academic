@@ -16,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ReduxProvider>
-      <html html lang="en" >
+      <html html="true" lang="en" >
         <body>
           <Nav />
           <main className={styles.main}>

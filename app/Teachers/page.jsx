@@ -62,9 +62,9 @@ const Teachers = () => {
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
             <path d="M6.34703 10.6647H0.382324V6.42941H6.34703V0.5H10.5823V6.42941H16.6176V10.6647H10.5823V16.6647H6.34703V10.6647Z" fill="white" />
           </svg>
-          <div className="btn-text">
+          <Link className="btn-text" href={`/teachers/add`}>
             New Teacher
-          </div>
+          </Link>
         </button>
       </div>
       <TeachersTable listTeachers={list} limit={limit} skip={skip} total={total} onPageClick={onPageClick} />
