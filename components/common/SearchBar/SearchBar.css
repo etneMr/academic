@@ -9,6 +9,8 @@
     flex-shrink: 0;
     border-radius: 40px;
     background: var(--color-white, #FFF);
+
+    border: 2px solid var(--color-gray-3, #A098AE);
 }
 
 .search-bar .search-input {

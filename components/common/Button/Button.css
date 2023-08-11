@@ -1,0 +1,43 @@
+.viewmore {
+    border-radius: 40px;
+    background: var(--linear-transparent-purple-10, rgba(77, 68, 181, 0.10));
+    padding: 17px 0px;
+    margin: 35px 0px 0px;
+    margin-bottom: 65px;
+    width: 100%;
+
+
+    color: var(--color-purple, #4D44B5);
+
+    /* Text/Text Semi Bold 1 */
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    border: none;
+}
+
+.button-with-icon {
+    padding: 9px 19px;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 8px;
+    align-items: center;
+
+    border-radius: 40px;
+    background: var(--color-purple, #4D44B5);
+    border: none;
+}
+
+.button-with-icon .text {
+    color: var(--color-white, #FFF);
+
+    /* Text/Text Semi Bold 1 */
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
