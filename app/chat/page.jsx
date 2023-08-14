@@ -8,7 +8,7 @@ const Chat = () => {
   return (
     <div id="chat">
       <div className="chat-header">
-        <h1>
+        <h1 style={{ flex: "1" }}>
           Chat
         </h1>
         <SearchBar />
@@ -37,7 +37,7 @@ function ChatComponent() {
         <ViewMore />
       </div>
       <div className="chatting-container">
-        <div className="chat-header">
+        <div className="chatting-header">
           <div className="chatting-info">
             <div className="avatar">
 
@@ -48,7 +48,7 @@ function ChatComponent() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <circle cx="8" cy="8" r="8" fill="#4CBC9A" />
                 </svg>
-                <p style={{padding:"0px"}}>Online</p>
+                <p style={{ padding: "0px" }}>Online</p>
               </div>
             </div>
           </div>

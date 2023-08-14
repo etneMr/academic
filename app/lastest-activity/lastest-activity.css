@@ -1,0 +1,80 @@
+#lastest-activity {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-right: 50px;
+    gap: 40px;
+    align-self: flex-start;
+}
+
+#lastest-activity .lastest-activity-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    /* align-self: space-between; */
+    align-items: center;
+    width: 100%;
+}
+
+#lastest-activity .lastest-activity-component {
+    background: var(--color-background, #fff);
+    padding: 32px;
+    border-radius: 20px;
+}
+
+.lastest-activity-header .date-activity {
+    position: relative;
+}
+
+/* The actual timeline (the vertical ruler) */
+.lastest-activity-component .timeline {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.lastest-activity-component .timeline::before {
+    content: ' ';
+    position: absolute;
+    width: 6px;
+    background-color: 2px dashed var(--color-gray-3, #A098AE);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin-left: -3px;
+}
+
+/* Container around content */
+.timeline .container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+
+    left: 0%;
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+}
+
+/* The circles on the timeline */
+.timeline .container::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #303972;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+    left: 0;
+}
+
+/* The actual content */
+.container .content {
+    position: relative;
+}

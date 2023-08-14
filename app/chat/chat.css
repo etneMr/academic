@@ -12,6 +12,16 @@
 #chat .chat-header {
     display: flex;
     flex-flow: row nowrap;
+    justify-content: flex-start;
+    /* align-self: space-between; */
+    align-items: center;
+    width: 100%;
+    gap: 40px;
+}
+
+#chat .chatting-header {
+    display: flex;
+    flex-flow: row nowrap;
     justify-content: space-between;
     /* align-self: space-between; */
     align-items: center;
@@ -142,7 +152,7 @@
     border-top: 1px solid #C1BBEB;
 }
 
-.chat-header .chatting-info {
+.chatting-header .chatting-info {
     display: flex;
     flex-grow: 1;
     flex-flow: row nowrap;
