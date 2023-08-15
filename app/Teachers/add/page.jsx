@@ -6,7 +6,8 @@ import FormContainer, { FormFooter } from '@/components/common/FormContainer/For
 import { TextField, TextareaField, SelectImageField } from '@/components/common/TextField/TextField'
 import { useForm } from "react-hook-form"
 import { doAddTeacher } from '@/redux/asyncActions/teachers'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { useRouter } from 'next/navigation'
 
 const AddTeacher = () => {
   return (
@@ -22,7 +23,12 @@ const AddTeacher = () => {
 }
 
 function TeacherForm() {
-
+  const { teacherId } = useSelector((state) => state.teacher)
+  
+  const { push } = useRouter();
+  if (teacherId) {
+    push(`/teachers/${teacherId}`);
+  }
   const { register, handleSubmit } = useForm({
     defaultValues: {
       firstName: '',
@@ -88,7 +94,7 @@ function TeacherForm() {
       <form id="teacher-form" onSubmit={handleSubmit(submitForm)}>
         <FormContainer label="Personal Details" children={personalField} />
         <FormContainer label="Education" children={educationField} />
-        <FormFooter />
+        <FormFooter formName="teacher-form"/>
       </form>
     </>
 

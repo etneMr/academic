@@ -102,7 +102,8 @@ const Nav = () => {
         </div>
       </div>
       <nav className="nav-items">
-        {listMenus.map((menu) => <Link href={menu.path} key={menu.title} className="menu-item">
+        {listMenus.map((menu) => 
+        <Link href={menu.path} key={menu.title} className="menu-item">
           <div className="menu-icon">
             {menu.icon}
           </div>

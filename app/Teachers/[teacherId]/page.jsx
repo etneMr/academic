@@ -1,5 +1,8 @@
+"use client"
 import React from 'react'
 import StatusBar from '@/components/StatusBar/StatusBar'
+import { useDispatch, useSelector } from 'react-redux'
+import { doGetOneTeacher } from '@/redux/asyncActions/teachers'
 import TaskComponent from '@/components/common/TaskComponent/TaskComponent'
 import './teacher-details.css'
 
@@ -9,14 +12,16 @@ const listTasks = [
     class: "Class VII-B",
     date: "March 20, 2021",
     time: "09.00 - 10.00 AM",
-    color: "#4D44B5"
+    color: "#4D44B5",
+    key: "1"
   },
   {
     subject: "Ancient History",
     class: "Class VII-A",
     date: "March 20, 2021",
     time: "09.00 - 10.00 AM",
-    color: "#FCC43E"
+    color: "#FCC43E",
+    key: "2"
 
   },
   {
@@ -24,18 +29,35 @@ const listTasks = [
     class: "Class VII-C",
     date: "March 20, 2021",
     time: "09.00 - 10.00 AM",
-    color: "#FB7D5B"
+    color: "#FB7D5B",
+    key: "3"
+
   },
   {
     subject: "World History",
     class: "Class VII-C",
     date: "March 20, 2021",
     time: "09.00 - 10.00 AM",
-    color: "#4D44B5"
+    color: "#4D44B5",
+    key: "4"
+
   }
 ]
 
-const TeacherDetails = ({ params: { teacherId } }) => {
+const TeacherDetails = ({ params }) => {
+  const { teacherId } = params;
+
+  const dispatch = useDispatch()
+  const { oneTeacher, error } = useSelector((state) => state.teacher)
+
+  React.useEffect(() => {
+    dispatch(doGetOneTeacher(teacherId))
+  }, [dispatch])
+
+  if (error) return `Error: ${error.message}`;
+
+  if (!oneTeacher) return `Student: ${oneTeacher}`;
+
   return (
     <div id="teacher-details">
       <div className="teacher-details-header">
@@ -45,13 +67,13 @@ const TeacherDetails = ({ params: { teacherId } }) => {
         <StatusBar />
       </div>
       <div className="about-teacher">
-        <TeacherDetailsComponent />
+        <TeacherDetailsComponent teacher={oneTeacher} />
         <ScheduleComponent listTasks={listTasks} />
       </div>
     </div>)
 }
 
-function TeacherDetailsComponent() {
+function TeacherDetailsComponent({ teacher }) {
   return (
     <div className="teacher-detail-container">
       <div className="teacher-header-background">
@@ -71,10 +93,10 @@ function TeacherDetailsComponent() {
           </svg>
         </div>
         <div className="name">
-          Maria Historia
+          {teacher.title}
         </div>
         <div className="subject">
-          History Teacher
+          {teacher.category}
         </div>
         <div className="contact">
           <div className="contact-item">
@@ -84,7 +106,7 @@ function TeacherDetailsComponent() {
               </svg>
             </div>
             <div className="contact-item-text">
-              Jakarta, Indonesia
+              {teacher.brand}
             </div>
           </div>
           <div className="contact-item">
@@ -148,7 +170,7 @@ export function ScheduleComponent({ listTasks }) {
   const rows = [];
   listTasks.map((task) =>
     rows.push(
-      <TaskComponent key={task.name} task={task} />
+      <TaskComponent key={task.key} task={task} />
     ))
   return (
     <div className="schedule-details">

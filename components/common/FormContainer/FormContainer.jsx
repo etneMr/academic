@@ -15,10 +15,10 @@ export default function FormContainer({ label, children }) {
     )
 }
 
-export function FormFooter() {
+export function FormFooter({formName}) {
     return (
         <div className="form-footer">
             <button className="save">Save as Draft</button>
-            <button className="submit" type="submit" form="teacher-form" value="Submit">Submit</button>
+            <button className="submit" type="submit" form={formName} value="Submit">Submit</button>
         </div>)
 }

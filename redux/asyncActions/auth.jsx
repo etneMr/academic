@@ -1,8 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { apiAuth } from "@/services/axios/axoisRepo";
 // import * as firebase from 'firebase/app'
-import firebase from 'firebase'
-require('firebase/auth')
+// import firebase from 'firebase'
+// import 'firebase/auth';
 
 export const doLogin = createAsyncThunk('auth/login', async ({ username, password }) => {
     const submission = {
@@ -22,7 +22,7 @@ export const doGetMe = createAsyncThunk('auth/getMe', async ({ userId }) => {
 
 // firebase.auth.createUserWithEmailAndPassword(auth, email, password)
 //     .then((userCredential) => {
-//         // Signed in 
+//         // Signed in
 //         const user = userCredential.user;
 //         // ...
 //     })
@@ -34,7 +34,7 @@ export const doGetMe = createAsyncThunk('auth/getMe', async ({ userId }) => {
 
 // firebase.auth.signInWithEmailAndPassword(auth, email, password)
 //     .then((userCredential) => {
-//         // Signed in 
+//         // Signed in
 //         const user = userCredential.user;
 //         // ...
 //     })

@@ -11,6 +11,11 @@ export const apiProduct = {
     getOneProduct: async (productId, params) => {
         const url = AppConstant.baseUrl + `products/${productId}`;
         return await axios.get(url, params);
+    },
+
+    createOneProduct: async (params) => {
+        const url = AppConstant.baseUrl + `products/add`;
+        return await axios.post(url, params);
     }
 };
 

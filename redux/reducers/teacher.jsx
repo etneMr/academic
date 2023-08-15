@@ -4,6 +4,7 @@ import { doGetOneTeacher, doAddTeacher } from "../asyncActions/teachers";
 const initialState = {
     oneTeacher: {},
     isLoading: false,
+    teacherId: null,
     error: {}
 }
 
@@ -15,6 +16,8 @@ const teacherSlice = createSlice({
         // Get one teacher redux thunk
         // Get one teacher when peding
         builder.addCase(doGetOneTeacher.pending, (state, action) => {
+            state.oneTeacher = {};
+            state.teacherId = null;
             state.error = null;
             state.isLoading = true;
         })
@@ -33,10 +36,12 @@ const teacherSlice = createSlice({
         })
 
         // Add one teacher
-        builder.addCase(doAddTeacher.pending((state, action) => {
+        builder.addCase(doAddTeacher.pending, (state, action) => {
             state.error = null;
             state.isLoading = true;
-        }))
+            state.teacherId = null;
+            state.oneTeacher = {};
+        })
 
         // Add one teacher failed -> return error
         builder.addCase(doAddTeacher.rejected, (state, action) => {
@@ -47,11 +52,11 @@ const teacherSlice = createSlice({
 
         // Add one teacher success
         builder.addCase(doAddTeacher.fulfilled, (state, action) => {
-            state.oneTeacher = action.payload;
+            state.teacherId = action.payload.id;
             state.isLoading = false;
         })
     }
 })
 
-const {reducer: teacherReducers, action} = teacherSlice;
+const { reducer: teacherReducers, action } = teacherSlice;
 export default teacherReducers;

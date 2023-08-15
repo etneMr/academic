@@ -13,5 +13,12 @@ export const doGetOneStudent = createAsyncThunk('students/getOne', async (studen
 
 export const doAddStudent = createAsyncThunk('students/addStudent', async (params) => {
     console.log(params);
-    await delay(1000);
+    const submission = {
+        title: params.lastName,
+        category: params.parentLastName,
+        brand: params.place,
+        price: 100
+    }
+    const response = await apiProduct.createOneProduct(JSON.stringify(submission))
+    return response.data;
 })

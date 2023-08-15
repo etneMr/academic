@@ -41,18 +41,19 @@ const listTasks = [
 
 const listPayments = [];
 
-const StudentDetails = () => {
+const StudentDetails = ({params}) => {
+    const { studentId } = params;
 
     const dispatch = useDispatch()
     const { oneStudent, error } = useSelector((state) => state.student)
 
     React.useEffect(() => {
-        dispatch(doGetOneStudent(1))
+        dispatch(doGetOneStudent(studentId))
     }, [dispatch])
 
     if (error) return `Error: ${error.message}`;
 
-    if (!oneStudent) return `Student: ${student}`;
+    if (!oneStudent) return `Student: ${oneStudent}`;
     return (
         <div id="student-details">
             <div className="student-details-header">

@@ -5,8 +5,9 @@ import StatusBar from '@/components/StatusBar/StatusBar'
 import FormContainer, { FormFooter } from '@/components/common/FormContainer/FormContainer'
 import { TextField, TextareaField, SelectImageField } from '@/components/common/TextField/TextField'
 import { useForm } from "react-hook-form"
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { doAddStudent } from '@/redux/asyncActions/students'
+import { useRouter } from 'next/navigation'
 
 const AddStudent = () => {
     return (
@@ -24,6 +25,11 @@ const AddStudent = () => {
 
 function StudentForm() {
 
+    const { studentId } = useSelector((state) => state.student)
+    const { push } = useRouter();
+    if (studentId) {
+        push(`/teachers/${studentId}`);
+    }
     const { register, handleSubmit } = useForm({
         defaultValues: {
             firstName: '',
@@ -89,7 +95,7 @@ function StudentForm() {
             <form id="student-form" onSubmit={handleSubmit(submitForm)}>
                 <FormContainer label="Student Details" children={studentField} />
                 <FormContainer label="Parent Details" children={parentField} />
-                <FormFooter />
+                <FormFooter formName="student-form" />
             </form>
         </>
     )

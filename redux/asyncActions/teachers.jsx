@@ -7,11 +7,18 @@ export const doGetAllTeachers = createAsyncThunk('teachers/getAll', async (param
 })
 
 export const doGetOneTeacher = createAsyncThunk('teachers/getOne', async (teacherId) => {
-    const response = await apiProduct.getOneProduct({ teacherId });
+    const response = await apiProduct.getOneProduct(teacherId);
     return response.data
 })
 
 export const doAddTeacher = createAsyncThunk('teachers/addTeacher', async (params) => {
     console.log(params);
-    await delay(1000);
+    const submission = {
+        title: params.lastName,
+        category: params.university,
+        brand: params.city,
+        price: 100
+    }
+    const response = await apiProduct.createOneProduct(JSON.stringify(submission))
+    return response.data;
 })
