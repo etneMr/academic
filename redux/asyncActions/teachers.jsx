@@ -10,3 +10,8 @@ export const doGetOneTeacher = createAsyncThunk('teachers/getOne', async (teache
     const response = await apiProduct.getOneProduct({ teacherId });
     return response.data
 })
+
+export const doAddTeacher = createAsyncThunk('teachers/addTeacher', async (params) => {
+    console.log(params);
+    await delay(1000);
+})

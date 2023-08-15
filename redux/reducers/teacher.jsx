@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { doGetOneTeacher } from "../asyncActions/teachers";
+import { doGetOneTeacher, doAddTeacher } from "../asyncActions/teachers";
 
 const initialState = {
     oneTeacher: {},
@@ -28,6 +28,25 @@ const teacherSlice = createSlice({
 
         // Get one teacher success
         builder.addCase(doGetOneTeacher.fulfilled, (state, action) => {
+            state.oneTeacher = action.payload;
+            state.isLoading = false;
+        })
+
+        // Add one teacher
+        builder.addCase(doAddTeacher.pending((state, action) => {
+            state.error = null;
+            state.isLoading = true;
+        }))
+
+        // Add one teacher failed -> return error
+        builder.addCase(doAddTeacher.rejected, (state, action) => {
+            const error = action.error;
+            state.error = error;
+            state.isLoading = false;
+        })
+
+        // Add one teacher success
+        builder.addCase(doAddTeacher.fulfilled, (state, action) => {
             state.oneTeacher = action.payload;
             state.isLoading = false;
         })
