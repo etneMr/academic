@@ -1,3 +1,9 @@
+.dashboard-layout {
+    display: flex;
+    flex-flow: row;
+    gap: 40px;
+}
+
 #dashboard {
     display: flex;
     flex-direction: column;
@@ -363,7 +369,7 @@
 }
 
 .recent-student-info .message {
-    
+
     color: var(--color-gray-3, #A098AE);
 
     /* Text/Text Regular 2 */

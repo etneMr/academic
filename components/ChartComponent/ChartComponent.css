@@ -1,0 +1,5 @@
+.chart-component {
+    border-radius: 20px;
+    background: var(--color-white, #FFF);
+    padding: 20px;
+}
