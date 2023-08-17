@@ -1,0 +1,111 @@
+@use '../../styles/variables.scss' as styles;
+
+#academic-side-nav {
+    background: styles.$primary-color;
+    padding-top: 30px;
+    padding-left: 27px;
+    width: 300px;
+    padding-bottom: 30px;
+    align-self: stretch;
+
+    .footer {
+        margin-top: 80px;
+        color: styles.$color-white;
+        font-family: Poppins;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    .menu-item {
+        width: 100%;
+        margin: 0px;
+        padding: 16px 24px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 24px;
+        color: styles.$color-gray-2;
+
+        &.active {
+            border-radius: 40px 0px 0px 40px;
+            background: var(--color-background, #F3F4FF);
+    
+            /* Shadow */
+            box-shadow: 0px 20px 50px 0px rgba(191, 21, 108, 0.05);
+            color: styles.$primary-color;
+            /* Text/Text Medium 1 */
+            font-family: Poppins;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+
+        &:hover {
+            border-radius: 40px 0px 0px 40px;
+            background: var(--color-background, #F3F4FF);
+            fill: styles.$primary-color;
+
+            /* Shadow */
+            box-shadow: 0px 20px 50px 0px rgba(191, 21, 108, 0.05);
+            color: styles.$primary-color;
+        }
+
+        .menu-title {
+            fill: inherit;
+            color: inherit;
+            /* Text/Text Medium 1 */
+            font-family: Poppins;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+    }
+
+   
+
+    .a-logo {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 16px;
+
+        margin-bottom: 46px;
+
+        .a-icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            border-radius: 16px;
+            background: styles.$color-orange;
+
+            color: styles.$color-white;
+            font-family: Poppins;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-align: center;
+        }
+
+        .title-text {
+            color: styles.$color-white;
+            font-family: Poppins;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+    }
+
+    
+}

@@ -64,7 +64,7 @@ function FoodTable({ listFoods }) {
   const rows = [];
   listFoods.map((food) =>
     rows.push(
-      <tr className="food-item" rowspan={7}>
+      <tr className="food-item" rowSpan={7}>
         <td className="food-image">
 
         </td>

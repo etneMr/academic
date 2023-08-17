@@ -1,0 +1,19 @@
+#finance {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-right: 50px;
+    gap: 40px;
+    align-self: flex-start;
+
+    .finance-header {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        /* align-self: space-between; */
+        align-items: center;
+        width: 100%;
+    }
+}
