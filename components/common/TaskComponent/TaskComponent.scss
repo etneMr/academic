@@ -1,0 +1,40 @@
+.task-component {
+  gap: 24px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+
+  border-radius: 20px;
+  background: var(--color-white, #fff);
+
+  .prefix-background {
+    border-radius: 20px 0px 0px 20px;
+    width: 24px;
+  }
+
+  .task-details {
+    padding: 24px 0px;
+    gap: 10px;
+    display: flex;
+    flex-flow: column wrap;
+
+    .subject {
+      color: var(--color-text, #303972);
+
+      /* Text/Text Semi Bold 1 */
+      font-family: Poppins;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+
+    .date-time {
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 16px;
+      align-items: center;
+    }
+  }
+}
