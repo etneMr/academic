@@ -2,11 +2,9 @@
 import React from "react";
 import StatusBar from "@/components/StatusBar/StatusBar";
 import { doGetOneTeacher } from "@/redux/asyncActions/teachers";
-import TaskComponent, {
-  Task,
-} from "@/components/common/TaskComponent/TaskComponent";
+import TaskComponent from "@/components/common/TaskComponent/TaskComponent";
 import { useAppDispatch, useAppSelector } from "@/redux/store";
-import "./teacher-details.css";
+import "./teacher-details.scss";
 
 const listTasks = [
   {
@@ -47,7 +45,7 @@ const TeacherDetails = ({ params }) => {
   const { teacherId } = params;
 
   const dispatch = useAppDispatch();
-  const { oneTeacher, error } = useAppSelector((state) => state.teacher);
+  const { onTeacher, error } = useAppSelector((state) => state.teacher);
 
   React.useEffect(() => {
     dispatch(doGetOneTeacher(teacherId));
@@ -55,7 +53,7 @@ const TeacherDetails = ({ params }) => {
 
   if (error) return `Error: ${error.message}`;
 
-  if (!oneTeacher) return `Student: ${oneTeacher}`;
+  if (!onTeacher) return `Teacher: ${onTeacher}`;
 
   return (
     <div id="teacher-details">
@@ -64,7 +62,7 @@ const TeacherDetails = ({ params }) => {
         <StatusBar />
       </div>
       <div className="about-teacher">
-        <TeacherDetailsComponent teacher={oneTeacher} />
+        <TeacherDetailsComponent teacher={onTeacher} />
         <ScheduleComponent listTasks={listTasks} />
       </div>
     </div>
@@ -196,8 +194,8 @@ function TeacherDetailsComponent({ teacher }) {
 
 export function ScheduleComponent({ listTasks }) {
   const rows = [];
-  listTasks.map((task) =>
-    rows.push(<TaskComponent key={task.key} {...task} />)
+  listTasks.map((task: ITask) =>
+    rows.push(<TaskComponent key={task.key} task={task}/>)
   );
   return (
     <div className="schedule-details">

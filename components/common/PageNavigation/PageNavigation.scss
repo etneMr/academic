@@ -1,24 +1,11 @@
-
 #page-navigation-footer {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-}
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
 
-#page-navigation-footer .display-total-students {
-    color: var(--color-gray-3, #A098AE);
-
-    /* Text/Text Regular 2 */
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.display-total-students .number {
-    color: #363B64;
+  .display-total-students {
+    color: var(--color-gray-3, #a098ae);
 
     /* Text/Text Regular 2 */
     font-family: Poppins;
@@ -26,17 +13,28 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    .number {
+      color: #363b64;
+
+      /* Text/Text Regular 2 */
+      font-family: Poppins;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
 }
 
 .page-navigation {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 16px;
-}
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
 
-.page-navigation .page-navigate-item {
+  .page-navigate-item {
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -46,16 +44,21 @@
     height: 50px;
 
     border-radius: 40px;
-    border: 2px solid var(--color-gray-3, #A098AE);
-}
+    border: 2px solid var(--color-gray-3, #a098ae);
 
-.page-navigate-item .page-navigate-number {
-    color: var(--color-gray-3, #A098AE);
+    .page-navigate-number {
+      color: var(--color-gray-3, #a098ae);
 
-    /* Text/Text Regular 1 */
-    font-family: Poppins;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+      /* Text/Text Regular 1 */
+      font-family: Poppins;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    :hover{
+        background-color: "#4D44B5";
+    }
+  }
 }

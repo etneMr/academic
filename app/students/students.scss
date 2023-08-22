@@ -1,0 +1,156 @@
+#students {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-right: 50px;
+    gap: 40px;
+    align-self: flex-start;
+
+    .students-table {
+        border-radius: 20px;
+        background: var(--color-white, #FFF);
+        padding: 32px;
+    
+        table {
+            /* border-radius: 20px; */
+            /* background: var(--color-white, #FFF); */
+            width: 100%;
+        }
+    
+        th {
+            color: var(--color-text, #303972);
+        
+            /* Text/Text Semi Bold 2 */
+            font-family: Poppins;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        
+            text-align: left;
+        }
+    
+        .student-rows {
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+    
+            td {
+                padding: 32px 0px;
+            }
+    
+            .student-contact {
+                display: flex;
+                flex-flow: row nowrap;
+                gap: 16px;
+    
+                .contact-icon {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 40px;
+                    height: 40px;
+                    flex-shrink: 0;
+                    border-radius: 20px;
+                    background: var(--color-purple, #eee);
+                }
+            }
+    
+            .student-grade {
+                display: flex;
+                width: 80px;
+                height: 40px;
+                padding: 4px 8px;
+                justify-content: center;
+                align-items: center;
+                flex-shrink: 0;
+            
+                border-radius: 40px;
+                background: var(--color-orange, #FB7D5B);
+            }
+        }
+    }
+
+    .students-header {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        /* align-self: space-between; */
+        align-items: center;
+        width: 100%;
+        .header-text {
+            color: var(--color-text, #303972);
+        
+            /* Heading/Heading 1 */
+            font-family: Poppins;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+    }
+}
+
+.filter-bar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+
+
+    .filter-btn {
+        border-radius: 40px;
+        border: 2px solid var(--color-purple, #4D44B5);
+    
+        /* Shadow */
+        box-shadow: 0px 20px 50px 0px rgba(191, 21, 108, 0.05);
+    
+        padding: 16px 43px;
+        gap: 16px;
+        flex-shrink: 0;
+        width: fit-content;
+        align-items: center;
+        display: flex;
+        flex-flow: row nowrap;
+
+        .btn-text {
+            color: var(--color-purple, #4D44B5);
+        
+            /* Text/Text Regular 1 */
+            font-family: Poppins;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+
+    .add-btn {
+        border-radius: 40px;
+        background: var(--color-purple, #4D44B5);
+    
+        /* Shadow */
+        box-shadow: 0px 20px 50px 0px rgba(191, 21, 108, 0.05);
+    
+        padding: 16px 43px;
+        gap: 16px;
+        flex-shrink: 0;
+        width: fit-content;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        .btn-text {
+            color: var(--color-white, #FFF);
+        
+            /* Text/Text Regular 1 */
+            font-family: Poppins;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+}

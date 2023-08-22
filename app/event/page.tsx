@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import './event.css';
+import './event.scss';
 import StatusBar from '@/components/StatusBar/StatusBar';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';

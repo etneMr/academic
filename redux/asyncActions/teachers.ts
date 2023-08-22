@@ -3,7 +3,7 @@ import { apiProduct } from "@/services/axios/axoisRepo";
 
 export const doGetAllTeachers = createAsyncThunk(
   "teachers/getAll",
-  async (params) => {
+  async (params: any) => {
     const response = await apiProduct.getAllProduct(params);
     return response.data;
   }

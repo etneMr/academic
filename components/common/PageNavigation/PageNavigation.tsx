@@ -58,13 +58,13 @@ export function PageNavigation({
       );
     } else {
       rows.push(
-        <div
+        <button
           className="page-navigate-item"
           key={i + 1}
           onClick={() => onPageClick(i)}
         >
           <div className="page-navigate-number">{i + 1}</div>
-        </div>
+        </button>
       );
     }
   }

@@ -33,7 +33,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "components/common/PageNavigation/PageNavigation.tsx"  ],
+, "components/common/PageNavigation/PageNavigation.tsx", "app/students/[studentId]/page.tsx"  ],
   "exclude": [
     "node_modules"
   ]

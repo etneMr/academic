@@ -1,17 +1,11 @@
 import "./TaskComponent.scss";
-
 import React from "react";
 
-export interface Task {
-  subject: string;
-  class: string;
-  date: string;
-  time: string;
-  color: string;
-  key: string;
+interface TaskProps {
+  task: ITask;
 }
 
-const TaskComponent = (task: any) => {
+function TaskComponent({ task }: TaskProps) {
   return (
     <div className="task-component">
       <div
@@ -59,6 +53,6 @@ const TaskComponent = (task: any) => {
       </div>
     </div>
   );
-};
+}
 
 export default TaskComponent;

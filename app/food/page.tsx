@@ -209,6 +209,7 @@ function FoodTable({ listFoods }) {
       </div>
     );
   };
+  let onClick = ()=>{}
 
   return (
     <div className="food-table">
@@ -223,7 +224,7 @@ function FoodTable({ listFoods }) {
         skip={0}
         limit={6}
         total={100}
-        onPageClick={() => {}}
+        onPageClick={onClick}
       />
     </div>
   );

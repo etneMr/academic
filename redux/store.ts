@@ -4,10 +4,10 @@ import { useDispatch, TypedUseSelectorHook, useSelector } from "react-redux";
 import { createWrapper } from "next-redux-wrapper";
 import { composeWithDevTools } from "redux-devtools-extension";
 import userReducers from "./reducers/user";
-import studentsReducers from "./reducers/students";
-import teachersReducers from "./reducers/teachers";
-import studentReducers from "./reducers/student";
-import teacherReducers from "./reducers/teacher";
+import studentsReducers from "./reducers/students.reducer";
+import teachersReducers from "./reducers/teachers.reducer";
+import studentReducers from "./reducers/student.reducer";
+import teacherReducers from "./reducers/teacher.reducer";
 import { rootReducer } from "./rootReducer";
 
 const middleware = [thunk];

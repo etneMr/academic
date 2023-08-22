@@ -1,13 +1,13 @@
 "use client"
 import React from 'react'
-import './add.css'
+import './add.scss'
 import StatusBar from '@/components/StatusBar/StatusBar'
 import FormContainer, { FormFooter } from '@/components/common/FormContainer/FormContainer'
 import { TextField, TextareaField, SelectImageField } from '@/components/common/TextField/TextField'
 import { useForm } from "react-hook-form"
-import { useDispatch, useSelector } from 'react-redux'
 import { doAddStudent } from '@/redux/asyncActions/students'
 import { useRouter } from 'next/navigation'
+import { useAppDispatch, useAppSelector } from '@/redux/store'
 
 const AddStudent = () => {
     return (
@@ -25,7 +25,7 @@ const AddStudent = () => {
 
 function StudentForm() {
 
-    const { studentId } = useSelector((state) => state.student)
+    const { studentId } = useAppSelector((state) => state.student)
     const { push } = useRouter();
     if (studentId) {
         push(`/teachers/${studentId}`);
@@ -48,7 +48,7 @@ function StudentForm() {
             parentAddress: '',
         }
     })
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
     const submitForm = (data) => {
         const submission = {

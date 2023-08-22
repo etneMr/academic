@@ -1,5 +1,7 @@
+"use client"
+
 import React from "react";
-import "./Dashboard.css";
+import "./Dashboard.scss";
 import StatusBar from "@/components/StatusBar/StatusBar";
 import { PageNavigation } from "@/components/common/PageNavigation/PageNavigation";
 import SearchBar from "@/components/common/SearchBar/SearchBar";
@@ -304,6 +306,7 @@ function UnpaidStudent({ listStudents }) {
       </tr>
     )
   );
+  let onClick = (page: number) => {}
   return (
     <div className="unpaid-student">
       <div className="unpaid-student-header">Unpaid Student Intuition</div>
@@ -316,7 +319,7 @@ function UnpaidStudent({ listStudents }) {
         skip={0}
         total={100}
         limit={6}
-        onPageClick={() => {}}
+        onPageClick={onClick}
       />
     </div>
   );

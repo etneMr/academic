@@ -1,9 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { apiProduct } from "@/services/axios/axoisRepo";
+import { IStudent } from "@/types/student/student.type";
 
 export const doGetAllStudents = createAsyncThunk(
   "students/getAll",
-  async (params) => {
+  async (params: any) => {
     const response = await apiProduct.getAllProduct(params);
     return response.data;
   }
