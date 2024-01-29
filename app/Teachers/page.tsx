@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { Fragment } from "react";
 import "./teachers.scss";
 import StatusBar from "@/components/StatusBar/StatusBar";
 import SearchBar from "@/components/common/SearchBar/SearchBar";
@@ -9,6 +9,7 @@ import Link from "next/link";
 import { doGetAllTeachers } from "@/redux/asyncActions/teachers";
 import { useAppDispatch, useAppSelector } from "@/redux/store";
 import { ITeacher } from "@/types/teacher/teacher.type";
+import TeacherItemSkeleton from "@/components/Skeleton/TeacherItem";
 
 const Teachers = () => {
   const { param, listTeachers, isLoading, error } = useAppSelector(
@@ -74,13 +75,22 @@ const Teachers = () => {
           </Link>
         </button>
       </div>
-      <TeachersTable
-        listTeachers={listTeachers}
-        limit={param.limit}
-        skip={param.skip}
-        total={param.total}
-        onPageClick={onPageClick}
-      />
+      {isLoading ? (
+        <Fragment>
+          <TeacherItemSkeleton />
+          <TeacherItemSkeleton />
+          <TeacherItemSkeleton />
+          <TeacherItemSkeleton />
+        </Fragment>
+      ) : (
+        <TeachersTable
+          listTeachers={listTeachers}
+          limit={param.limit}
+          skip={param.skip}
+          total={param.total}
+          onPageClick={onPageClick}
+        />
+      )}
     </div>
   );
 };

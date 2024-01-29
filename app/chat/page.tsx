@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import './chat.css'
 import { ViewMore, ButtonWithIcon } from '@/components/common/Button/Button'
@@ -118,6 +120,5 @@ function ChattingItem() {
     </div>
   )
 }
-
 
 export default Chat

@@ -2,13 +2,12 @@ import { configureStore, ThunkAction, applyMiddleware } from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
 import { useDispatch, TypedUseSelectorHook, useSelector } from "react-redux";
 import { createWrapper } from "next-redux-wrapper";
-import { composeWithDevTools } from "redux-devtools-extension";
 import userReducers from "./reducers/user";
 import studentsReducers from "./reducers/students.reducer";
 import teachersReducers from "./reducers/teachers.reducer";
 import studentReducers from "./reducers/student.reducer";
 import teacherReducers from "./reducers/teacher.reducer";
-import { rootReducer } from "./rootReducer";
+import { studentApi } from './reducers/students.service';
 
 const middleware = [thunk];
 
@@ -19,9 +18,11 @@ export const store = configureStore({
     teachers: teachersReducers,
     student: studentReducers,
     teacher: teacherReducers,
+    [studentApi.reducerPath] : studentApi.reducer
   },
-  // devTools: composeWithDevTools(applyMiddleware(...middleware)),
-  // middleware: middleware
+  middleware(getDefaultMiddleware) {
+      return getDefaultMiddleware().concat(studentApi.middleware )
+  },
 });
 
 type RootState = ReturnType<typeof store.getState>;

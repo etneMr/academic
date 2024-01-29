@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import "./food.scss";
 import StatusBar from "@/components/StatusBar/StatusBar";

@@ -95,7 +95,6 @@ const listMenus = [
 
 const Nav = () => {
   const pathName = usePathname();
-  console.log(pathName)
   return (
     <div id="academic-side-nav">
       <div className="a-logo">

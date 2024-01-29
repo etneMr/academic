@@ -4,7 +4,7 @@ import { ISliceTeachers } from "@/types/slices";
 
 const initialState: ISliceTeachers = {
   listTeachers: [],
-  error: {},
+  error: null,
   isLoading: false,
   param: {
     limit: 6,

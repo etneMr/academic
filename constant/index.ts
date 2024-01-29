@@ -1,9 +1,9 @@
 export const EToken = {
-    xLimit: "xLimit",
-    xToken: "xToken",
-    xlistCard: "xListCard"
-}
+  xLimit: "xLimit",
+  xToken: "xToken",
+  xlistCard: "xListCard",
+};
 
 export const AppConstant = {
-    baseUrl: 'https://dummyjson.com/'
-}
+  baseUrl: "https://dummyjson.com/",
+};

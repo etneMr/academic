@@ -2,6 +2,7 @@ interface IParamsQuery {
   skip: number;
   limit: number;
   search?: string;
-  total: number
+  total: number;
+  filter: any;
 }
 

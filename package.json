@@ -11,6 +11,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@types/js-cookie": "^3.0.3",
+    "@types/lodash": "^4.14.197",
     "axios": "^1.4.0",
     "chart.js": "^4.3.3",
     "faker": "^5.5.3",
@@ -30,7 +31,12 @@
     "typescript": "^5.1.6"
   },
   "devDependencies": {
+    "@types/autoprefixer": "^10.2.0",
     "@types/node": "20.5.0",
-    "sass": "^1.65.1"
+    "@types/tailwindcss": "^3.1.0",
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.28",
+    "sass": "^1.65.1",
+    "tailwindcss": "^3.3.3"
   }
 }

@@ -7,13 +7,14 @@ import { ScheduleComponent } from "@/app/teachers/[teacherId]/page";
 import { PageNavigation } from "@/components/common/PageNavigation/PageNavigation";
 import { useAppDispatch, useAppSelector } from "@/redux/store";
 
-const listTasks = [
+const listTasks: ITask[] = [
   {
     subject: "World History",
     class: "Class VII-B",
     date: "March 20, 2021",
     time: "09.00 - 10.00 AM",
     color: "#4D44B5",
+    key: "1",
   },
   {
     subject: "Ancient History",
@@ -21,6 +22,7 @@ const listTasks = [
     date: "March 20, 2021",
     time: "09.00 - 10.00 AM",
     color: "#FCC43E",
+    key: "4",
   },
   {
     subject: "Culture",
@@ -28,6 +30,7 @@ const listTasks = [
     date: "March 20, 2021",
     time: "09.00 - 10.00 AM",
     color: "#FB7D5B",
+    key: "3",
   },
   {
     subject: "World History",
@@ -35,6 +38,7 @@ const listTasks = [
     date: "March 20, 2021",
     time: "09.00 - 10.00 AM",
     color: "#4D44B5",
+    key: "2",
   },
 ];
 

@@ -10,7 +10,7 @@ type LoginInfo = {
 };
 export const doLogin = createAsyncThunk(
   "auth/login",
-  async ({ username, password }: LoginInfo) => {
+  async ({ username, password }: LoginInfo, thunkApi) => {
     const submission = {
       username: username,
       password: password,

@@ -2,7 +2,7 @@ import { AppConstant } from "@/constant";
 import axios from "axios";
 
 export const apiProduct = {
-  getAllProduct: async (params) => {
+  getAllProduct: async (params, thunkApi?: any) => {
     const url = AppConstant.baseUrl + "products";
     return await axios.get(url, params);
   },
@@ -19,11 +19,12 @@ export const apiProduct = {
 };
 
 export const apiAuth = {
-  login: async (params) => {
+  login: async (params, thunkApi?: any) => {
     let config = {
       headers: {
         "Content-Type": "application/json",
       },
+      signal: thunkApi.signal
     };
     const url = AppConstant.baseUrl + "auth/login";
     return await axios.post(url, params, config);

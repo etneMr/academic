@@ -1,6 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, AsyncThunk } from "@reduxjs/toolkit";
 import { doGetOneStudent, doAddStudent } from "../asyncActions/students";
 import { ISliceStudent } from "@/types/slices";
+
+type GenericAsyncThunk = AsyncThunk<unknown, unknown, any>;
+
+type PendingAction = ReturnType<GenericAsyncThunk["pending"]>;
+type RejectedAction = ReturnType<GenericAsyncThunk["rejected"]>;
+type FulfilledAction = ReturnType<GenericAsyncThunk["fulfilled"]>;
 
 const initialState: ISliceStudent = {
   onStudent: null,
@@ -14,49 +20,34 @@ const studentSlice = createSlice({
   initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
-    // Get one Student redux thunk
-    // Get one Student when peding
     builder
-      .addCase(doGetOneStudent.pending, (state) => {
-        state.error = null;
-        state.isLoading = true;
-        state.studentId = null;
-        state.onStudent = null;
-      })
-
-      // Get one Student failed -> return error
-      .addCase(doGetOneStudent.rejected, (state, action) => {
-        const error = action.error;
-        state.error = error;
-        state.isLoading = false;
-      })
-
       // Get one Student success
       .addCase(doGetOneStudent.fulfilled, (state, action) => {
         state.onStudent = action.payload;
         state.isLoading = false;
       })
-
-      // Add one student
-      .addCase(doAddStudent.pending, (state) => {
-        state.error = null;
-        state.isLoading = true;
-        state.studentId = null;
-        state.onStudent = null;
-      });
-
-    // Add one Student failed -> return error
-    builder.addCase(doAddStudent.rejected, (state, action) => {
-      const error = action.error;
-      state.error = error;
-      state.isLoading = false;
-    });
-
-    // Add one Student success
-    builder.addCase(doAddStudent.fulfilled, (state, action) => {
-      state.studentId = action.payload.id;
-      state.isLoading = false;
-    });
+      // Add one Student success
+      .addCase(doAddStudent.fulfilled, (state, action) => {
+        state.studentId = action.payload.id;
+        state.isLoading = false;
+      })
+      .addMatcher<PendingAction>(
+        (action) => action.type.endsWith("/pending"),
+        (state) => {
+          state.error = null;
+          state.isLoading = true;
+          state.studentId = null;
+          state.onStudent = null;
+        }
+      )
+      .addMatcher<RejectedAction>(
+        (action) => action.type.endsWith("/rejected"),
+        (state, action) => {
+          const error = action.error;
+          state.error = error;
+          state.isLoading = false;
+        }
+      );
   },
 });
 

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import "./Dashboard.scss";
@@ -306,7 +306,7 @@ function UnpaidStudent({ listStudents }) {
       </tr>
     )
   );
-  let onClick = (page: number) => {}
+  let onClick = (page: number) => {};
   return (
     <div className="unpaid-student">
       <div className="unpaid-student-header">Unpaid Student Intuition</div>
@@ -340,7 +340,7 @@ function RecentStudents({ listStudents }) {
   const rows = [];
   listStudents.map((student: any) =>
     rows.push(
-      <div className="recent-student-item">
+      <div className="recent-student-item" key={student.id}>
         <div className="recent-student-avatar">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -403,7 +403,7 @@ function Messages({ listMessages }) {
 
   listMessages.map((message: any) =>
     rows.push(
-      <div className="recent-messages-item">
+      <div className="recent-messages-item" key={message.sendFrom}>
         <div className="recent-student-avatar">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -445,7 +445,7 @@ function Posts({ listPosts }) {
 
   listPosts.map((post: any) =>
     rows.push(
-      <div className="post-item">
+      <div className="post-item" key={post.title}>
         <div className="post-thumbnail"></div>
         <div className="title">{post.title}</div>
         <div className="des">{post.des}</div>
